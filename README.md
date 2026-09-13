@@ -1,9 +1,14 @@
-# Cozy Cafe — interactive demonstration
+# Cozy Cafe — website demonstration
 
-© 2026 MTByte · https://mtbyte.io/ · All rights reserved.
+Live website: https://legodev94.github.io/cozy-cafe-demo/
 
-This repository contains only a static demonstration viewer wrapper. The café HTML, CSS, JavaScript, original images, backend, and order data are not distributed here.
+Regular HTML, CSS and JavaScript pages, with a subtle MTByte watermark.
+Menu, favourites, basket and checkout work directly in the browser.
+Prices and photos are provisional. Orders and contact messages are demonstration
+submissions only: no payment, cafe notification or fulfilment.
 
-The interactive preview runs in an isolated browser on our server and sends rendered frames. All orders in this demonstration are test requests. Menu prices are provisional.
+The demo API runs separately on MTByte hosting. This repository contains the
+public website files only; it contains no server code, database or credentials.
 
-The demonstration can be disabled by its owner. Visible frames can still be captured; this is not a claim of absolute copy protection.
+Design and implementation © MTByte / https://mtbyte.io/.
+Published for review; publication does not grant a licence to reuse the work.

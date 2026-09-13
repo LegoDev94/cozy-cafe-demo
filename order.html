@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="cozy-api-base" content="https://leads.mtbyte.io/cozy-demo-api">
+  <meta name="cozy-demo" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3e9">
+  <meta name="description" content="Review your Cozy Cafe order and send a request for confirmation.">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Your order · Cozy Cafe</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="order.css">
+  <script src="site.js" defer></script>
+  <script src="premium.js" defer></script>
+  <script src="order.js" defer></script>
+</head>
+<body data-page="order">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="announcement">A little coffee. A little comfort. A place to call your own. <span>CADILLAC, MICHIGAN</span></div>
+<header class="site-header wrap">
+  <a class="brand" href="index.html" aria-label="Cozy Cafe home"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M10 19h24v10c0 7-5 11-12 11S10 36 10 29V19Z" stroke="currentColor" stroke-width="2.2"/><path d="M34 21h3a6 6 0 0 1 0 12h-4M7 43h31M17 13c-4-5 5-5 1-10M25 13c-4-5 5-5 1-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>cozy<span class="brand-sub">CAFE · CADILLAC</span></span></a>
+  <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false"><span class="menu-toggle-lines" aria-hidden="true"></span><span class="sr-only">Open navigation</span></button>
+  <nav id="main-nav" class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a>
+<a href="about.html">Our story</a>
+<a href="menu.html">The menu</a>
+<a href="contact.html">Find us</a><a href="order.html" data-order-nav aria-current="page">Your order <span data-order-count>0</span></a></nav>
+  <a class="button button-small header-cta" href="menu.html">Something delicious <span aria-hidden="true">↗</span></a>
+</header>
+<main id="main" class="order-main">
+<section class="wrap order-intro"><a class="order-back" href="menu.html"><span aria-hidden="true">←</span> Back to the menu</a><p class="eyebrow">A LITTLE SOMETHING TO LOOK FORWARD TO</p><h1>Your kind<br><em>of delicious.</em></h1><p class="lead">Choose your favorites. Leave your details.<br>We’ll save your request for confirmation.</p></section>
+<div class="wrap"><div class="order-catalog-status" data-order-catalog-status role="status">Checking today’s menu…</div><p class="order-price-note" data-order-price-note hidden></p><p class="order-feedback" data-order-feedback role="status" aria-live="polite"></p>
+<noscript><div class="order-notice">Please enable JavaScript to review your basket and submit an order request. You can still <a href="menu.html">browse the full menu</a> or <a href="contact.html">contact the café</a>.</div></noscript>
+<section class="order-empty" data-order-empty hidden><span class="order-empty-mark" aria-hidden="true">+</span><h2>Something lovely<br><em>is waiting.</em></h2><p>Your basket is empty. Explore the menu and add something that catches your eye.</p><a href="menu.html" class="button">Explore the menu <span aria-hidden="true">↗</span></a></section>
+<div class="order-checkout" data-order-checkout hidden>
+  <section class="order-basket-panel" aria-labelledby="basket-heading"><div class="order-panel-heading"><div><p class="eyebrow">01 · YOUR PICKS</p><h2 id="basket-heading">A good choice.</h2></div><a class="text-link" href="menu.html">Add more <span aria-hidden="true">+</span></a></div><div class="order-basket-lines" data-order-lines="full"></div><div class="order-basket-total"><span>Subtotal</span><strong data-order-subtotal>Price to confirm</strong></div><p class="order-total-note" data-order-total-note>Your request is subject to confirmation.</p></section>
+  <section class="order-contact-panel" aria-labelledby="order-details-heading"><p class="eyebrow">02 · A WAY TO REACH YOU</p><h2 id="order-details-heading">Let’s make<br><em>it yours.</em></h2><p>Leave a phone number or email so the café can confirm your request.</p>
+  <form id="order-form" action="https://leads.mtbyte.io/cozy-demo-api/api/orders" method="post"><fieldset id="order-customer-fields"><legend class="sr-only">Your contact details</legend><div class="field"><label for="order-name">Your name <span aria-hidden="true">*</span></label><input id="order-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="100" placeholder="What should we call you?"></div><div class="field"><label for="order-phone">Phone number</label><input id="order-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="Your phone number" aria-describedby="order-contact-hint"></div><div class="field"><label for="order-email">Email address</label><input id="order-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" aria-describedby="order-contact-hint"></div><p id="order-contact-hint" class="order-field-hint">Please provide at least one: phone or email.</p><div class="field"><label for="order-notes">Anything we should know? <span class="order-optional">Optional</span></label><textarea id="order-notes" name="notes" rows="3" maxlength="2000" placeholder="A question or a note about your request…"></textarea></div><div class="honey" aria-hidden="true"><label for="order-website">Leave this field empty</label><input id="order-website" name="website" tabindex="-1" autocomplete="off" type="text"></div></fieldset><p class="order-privacy">Your details are used to respond to this request. <a href="contact.html#privacy">Privacy information</a>.</p><button type="submit" class="button order-submit" disabled>Send order request <span aria-hidden="true">↗</span></button><p class="order-submit-note">Your request will need confirmation. No payment is taken here.</p><p id="order-form-status" role="status" aria-live="polite"></p></form>
+  </section>
+</div>
+<section class="order-pending" data-order-pending hidden aria-labelledby="pending-heading"><p class="eyebrow">LET’S MAKE SURE</p><h2 id="pending-heading">Checking your request.</h2><p data-order-pending-message>We haven’t confirmed whether the café saved your request. Your basket and details are held to prevent a duplicate.</p><p class="order-request-reference">Request reference: <span data-order-request-reference></span></p><div class="order-pending-actions"><button class="button" type="button" data-order-retry hidden>Retry the same request</button><button class="text-link" type="button" data-order-check-status>Check request status <span aria-hidden="true">↗</span></button></div><p class="order-pending-note">Keep this page open while checking. If you contact the café, include the request reference above.</p><a class="text-link" href="contact.html">Contact the café <span aria-hidden="true">↗</span></a></section>
+<section class="order-receipt" data-order-receipt hidden tabindex="-1" aria-labelledby="receipt-heading"><div class="order-receipt-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="20" cy="20" r="18"/><path d="m11 20 6 6 12-12"/></svg></div><p class="eyebrow">THANK YOU FOR CHOOSING COZY</p><h2 id="receipt-heading">Request saved.<br><em>Good things ahead.</em></h2><p class="order-receipt-status">Order request saved. Awaiting confirmation.</p><p class="order-receipt-reference">Reference <strong data-order-receipt-id></strong></p><div class="order-receipt-items" data-order-receipt-items></div><div class="order-basket-total"><span>Subtotal</span><strong data-order-receipt-total></strong></div><p class="order-price-note" data-order-receipt-pricing></p><p class="order-receipt-next">Please contact the café to confirm availability and arrangements. Your request has been recorded; no payment has been collected.</p><div class="button-row"><button type="button" class="button" data-order-copy-receipt>Copy order summary</button><a href="contact.html" class="text-link">Contact the café <span aria-hidden="true">↗</span></a><a href="menu.html" class="text-link">Back to the menu <span aria-hidden="true">↗</span></a></div></section>
+</div></main>
+<footer class="site-footer">
+<div class="wrap footer-main">
+  <div><a class="brand brand-footer" href="index.html"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M10 19h24v10c0 7-5 11-12 11S10 36 10 29V19Z" stroke="currentColor" stroke-width="2.2"/><path d="M34 21h3a6 6 0 0 1 0 12h-4M7 43h31M17 13c-4-5 5-5 1-10M25 13c-4-5 5-5 1-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>cozy<span class="brand-sub">CAFE · CADILLAC</span></span></a><p>Good company starts<br>with a good cup.</p></div>
+  <div><h2>Take a look around</h2><a href="index.html">Home</a>
+<a href="about.html">Our story</a>
+<a href="menu.html">The menu</a>
+<a href="contact.html">Find us</a></div>
+  <div><h2>Come say hello</h2><address>8834 E 34 Rd #131<br>Cadillac, MI 49601</address><a href="https://www.google.com/maps/search/?api=1&amp;query=8834%20E%2034%20Rd%20%23131%2C%20Cadillac%2C%20MI%2049601" target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a></div>
+  <div><h2>A question on your mind?</h2><p>We’d love to hear from you.</p><a href="contact.html#contact-form">Send us a note <span aria-hidden="true">↗</span></a><a href="tel:+15688289017">+1(56)88289017</a></div>
+</div>
+<div class="wrap footer-wordmark" aria-hidden="true"><span>a little more cozy.</span></div>
+<div class="wrap footer-bottom"><span>Demonstration · © <a href="https://mtbyte.io/" target="_blank" rel="noopener noreferrer">MTByte</a></span><span>Coffee. Conversation. Come as you are.</span><a href="contact.html#privacy">Your privacy</a></div>
+</footer>
+</body>
+</html>
